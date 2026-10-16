@@ -71,12 +71,16 @@ public class Main {
     }
 
     public static boolean playAgain(Scanner in) {
-        boolean playing = false;
-        System.out.print("Do you want to play again? [Y/N]: ");
-        String playMore = in.nextLine();
-        if(playMore.equalsIgnoreCase("Y"))
-            return true;
-        else
-            return false;
+        do {
+
+            System.out.print("Do you want to play again? [Y/N]: ");
+            String playMore = in.nextLine();
+            if (playMore.equalsIgnoreCase("Y"))
+                return true;
+            else if (playMore.equalsIgnoreCase("N"))
+                return false;
+            else
+                IO.println("Invalid input, please enter Y or N: ");
+        } while (true);
     }
 }
